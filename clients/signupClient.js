@@ -46,6 +46,8 @@ class signupClient {
         });
         await newUser.save()
         console.log('added a new user', newUser)
+
+        await mongoose.connection.close();
         return Promise.resolve();
       } catch (error) {
         console.log('error adding a user: ', error);

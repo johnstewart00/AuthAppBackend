@@ -33,6 +33,8 @@ class loginClient {
                 throw new Error('no data found')
             }
             console.log('success!', user)
+
+            await mongoose.connection.close();
             return user;
         } catch (error) {
             console.error('Error retrieving the users: ', error);
