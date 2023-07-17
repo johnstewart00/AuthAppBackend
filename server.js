@@ -5,7 +5,11 @@ const signupHandler = require('./handlers/signupHandler');
 
 
 const app = express();
-app.use(cors());
+app.use(
+    cors({
+        origin: ['https://johnstewart00.github.io'],
+      })
+);
 app.use(express.json());
 
 const port = 3001;
