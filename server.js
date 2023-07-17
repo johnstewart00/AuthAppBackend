@@ -50,6 +50,6 @@ app.post('/signup', async (req, res) => {
     }
   });
 
-app.listen(port, () => {
-  console.log(`listening on port ${port}`);
+app.listen(process.env.PORT ||port, () => {
+  console.log(`listening on port ${process.env.PORT || 3001}`);
 });
