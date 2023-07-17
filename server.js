@@ -7,7 +7,7 @@ const signupHandler = require('./handlers/signupHandler');
 const app = express();
 app.use(
     cors({
-        origin: ['https://johnstewart00.github.io'],
+        origin: ['https://johnstewart00.github.io', 'https://johnstewart00.github.io/authentification'],
       })
 );
 app.use(express.json());
