@@ -15,7 +15,7 @@ class loginClient {
         console.log('username: ', this.username)
         console.log('hashedPassword: ', this.password);
         try {
-            mongoose.connect('mongodb+srv://johnstewart:test@cluster0.ypghj.mongodb.net/?retryWrites=true&w=majority', {
+            await mongoose.connect('mongodb+srv://johnstewart:test@cluster0.ypghj.mongodb.net/?retryWrites=true&w=majority', {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
             })
