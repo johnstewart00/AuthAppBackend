@@ -14,7 +14,7 @@ app.use(
 app.use(express.json());
 
 const port = process.env.PORT || 3001;
-const buildPath = path.join(__dirname, '../build'); // Adjust the path to your build folder
+const buildPath = path.join(__dirname, './build'); // Adjust the path to your build folder
 app.use(express.static(buildPath));
 
 app.get('/login', async (req, res) => {
