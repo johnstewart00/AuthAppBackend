@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const loginHandler = require('./handlers/loginHandler');
 const signupHandler = require('./handlers/signupHandler');
+const path = require('path');
 
 
 const app = express();
@@ -12,7 +13,9 @@ app.use(
 );
 app.use(express.json());
 
-const port = 3001;
+const port = process.env.PORT || 3001;
+const buildPath = path.join(__dirname, '../build'); // Adjust the path to your build folder
+app.use(express.static(buildPath));
 
 app.get('/login', async (req, res) => {
     console.log('made a GET to the login route');
