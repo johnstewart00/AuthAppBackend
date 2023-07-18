@@ -30,7 +30,7 @@ class loginClient {
             //console.log('Users:', users);
             if(user.length === 0) {
                 console.log('no user found')
-                throw new Error('no data found')
+                throw new Error('Invalid Credentials. No user with that username and password exists')
             }
             console.log('success!', user)
 

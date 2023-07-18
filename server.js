@@ -27,11 +27,8 @@ app.get('/login', async (req, res) => {
         address: result[0].address,
         gender: result[0].gender
       }
-      console.log('after deletes: ', toSend)
-      console.log('after stringify: ', JSON.stringify(toSend));
       res.send(JSON.stringify(toSend));
     } catch (error) {
-      console.log('in the server', error);
       res.status(500).send(error.message); // Send the error message as a string
     }
   });
@@ -45,7 +42,6 @@ app.post('/signup', async (req, res) => {
         await signupHandler(req.body);
         res.send('successfully added a new user');
     } catch (error) {
-        console.log('in signup route catch block', error);
         res.status(500).send(error.message);
     }
   });
